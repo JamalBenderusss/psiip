@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,17 @@
     <meta name="description" content="Информация">
     <meta name="keywords" lang="ru" content="Ключевые слова через запятую">
     <title>Обо мне</title>
-    <link rel="stylesheet" href="/css/css.css">
+    <style>
+        @import "css/css.css";
+        div{
+    margin: auto;
+    text-align: center;
+}
+
+.seven{
+    color: red;
+}
+    </style>
     <script>
         function alerrt(){
             alert("Информация отправлена!");
@@ -16,7 +27,7 @@
         };
     </script>
 </head>
-<body>
+<body style="background-color: chocolate;">
     <div>
     <h1 class="title" id="up">Немного обо мне</h1>
     <p>Я учащийся 3 курса <b>гродненского государственного политехнического колледжа</b>, мне 18 лет,учусь
@@ -40,7 +51,9 @@
         <li>Однажды в Голливуде</li>
         <li class="iron-man">Железный желовек</li>
     </ol>
-    <video class="video" controls src="/video.mp4"></video>
+    <video class="video" controls src="/video.mp4" style="    width: 500px;
+    display: inline-block;
+    left: auto;"></video>
     <img src="/Оппенгеймер.png" alt="Оппенгеймер-фото">
     <audio controls src="/track.mp3"></audio>
     <div>
@@ -58,7 +71,7 @@
             <input class="input-radio" type="radio"><input class="input-radio" type="radio"></div> 
             <div class="form-div"><label>Введите номер</label>
             <input  type="tel"  placeholder="+375(**)***-**-**" pattern="+375[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required></div>
-            <div class="form-div">
+            <div class="form-div xobbies">
                 <label class="full">Выберите ваши хобби</label>
                 <label class="xobby">Спорт</label>
                 <input  type="checkbox">
@@ -88,6 +101,6 @@
             </div>
         </form>
     </div>
-    <footer><div><p><b>СПАСИБО ЗА ВНИМАНИЕ!!!</b>  <a href="#up">Вернуться в начало</a></p></div></footer>
+    <footer><div><p><b>СПАСИБО ЗА ВНИМАНИЕ!!!</b>  <a href="#up" style="margin: 75px;font-size: 30px;  text-decoration: none;">Вернуться в начало</a></p></div></footer>
 </body>
 </html>
