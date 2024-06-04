@@ -1,101 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Информация">
-    <meta name="keywords" lang="ru" content="Ключевые слова через запятую">
-    <title>Обо мне</title>
-    <link rel="stylesheet" href="/css/css.css">
-    <style>
-        div{
-    margin: auto;
-    text-align: center;
-}
-
-.seven{
-    color: red;
-}
-    </style>
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script defer src="/script.js"></script>
     <script>
-        function alerrt(){
-            alert("Информация отправлена!");
-        };
-        function deleted(){
-            alert("Информация удалена");
-        };
+        function showMonth(){
+            let date = new Date();
+            let month = date.getMonth()+1;
+            alert(month);
+            
+        }
     </script>
 </head>
 <body>
-    <div>
-    <h1 class="title" id="up">Немного обо мне</h1>
-    <p>Я учащийся 3 курса <b>гродненского государственного политехнического колледжа</b>, мне 18 лет,учусь
-    на программиста.
-    </p>
-    </div>
-    <table>
-        <tr><th>tg</th><td><a href="https://www.instagram.com/jamalbenderusss/" target="_blank" class="lineNon">@JamalBenderusss</a></td></tr>
-        <tr><th>инстаграмм</th><td><a href="https://www.instagram.com/jamalbenderusss/" target="_blank" class="lineNon">JamalBenderusss</a></td></tr>
-        <tr><th>почта</th><td><a href="mailto:artem.kostyuk.2015@inbox.ru">artem.kostyuk.2015@inbox.ru</a></td></tr>
-        <tr><th>телефон</th><td><a href="tel:375256796914" >+375256796914</a></td></tr>
-    </table>
-    <h2><i class="title">&#8595; Любимые фильмы </i></h2>
-    <ol>
-        <li>Оппенгеймер</li>
-        <li>Побег из Шоушенка</li>
-        <li>Остров призрак</li>
-        <li class="seven">Семь</li>
-        <li>Бойцовский клуб</li>
-        <li>Омерзительная восьмерка</li>
-        <li>Однажды в Голливуде</li>
-        <li class="iron-man">Железный желовек</li>
-    </ol>
-    <a href="/index1.html">Показать медиа-контент</a>
-    <div>
-        <h2>Заполните анкету</h2>
-        <form method="get" class="form">
-            <div class="form-div"><label>Введите имя</label>
-            <input type="text" placeholder="Введите имя" required></div> 
-            <div class="form-div"><label>Введите фамилию</label>
-            <input type="text" placeholder="Введите фамилию" required></div> 
-            <div class="form-div"><label>Введите email</label>
-            <input type="email" placeholder="Введите email" required></div> 
-            <div class="form-div"><label>Введите пароль</label>
-            <input type="password" placeholder="Введите пароль" required></div> 
-            <div class="form-div"><label>Выберите пол(1-м,2-ж)</label>
-            <input class="input-radio" type="radio"><input class="input-radio" type="radio"></div> 
-            <div class="form-div"><label>Введите номер</label>
-            <input  type="tel"  placeholder="+375(**)***-**-**" pattern="+375[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required></div>
-            <div class="form-div xobbies">
-                <label class="full">Выберите ваши хобби</label>
-                <label class="xobby">Спорт</label>
-                <input  type="checkbox">
-                <label class="xobby">Фильмы</label>
-                <input  type="checkbox">
-                <label class="xobby">рисование</label>
-                <input  type="checkbox">
-                <label class="xobby">пение</label>
-                <input  type="checkbox">
-                <label class="xobby">танцы</label>
-                <input  type="checkbox">
-            </div>
-            <div class="form-div"><label>Какой сегодня день</label>
-                <select>
-                    <option value="1">День</option>
-                    <option value="Monday">Понедельник</option>
-                    <option value="Tuesday">Вторник</option>
-                    <option value="Wensday">Среда</option>
-                    <option value="Thusday">Четверг</option>
-                    <option value="Friday">Пятница</option>
-                    <option value="Saturdat">Суббота</option>
-                    <option value="Sunday">Воскресенье</option>
-                </select></div>
-            <div class="form-div">
-                <button type="reset" onclick="deleted()">Очистить поля</button>    
-                <button onclick="alerrt()" type="submit">Отправить</button>    
-            </div>
-        </form>
-    </div>
-    <footer><div><p><b>СПАСИБО ЗА ВНИМАНИЕ!!!</b>  <a href="#up" style="margin: 75px;font-size: 30px;  text-decoration: none;">Вернуться в начало</a></p></div></footer>
+    <script>
+        function nameL(){
+            let i=0;
+            let p=document.querySelector(".z2");
+            do{
+                p.textContent+="Костюк Артем\t";
+                i++;
+            } while (i<16)
+        }
+        function ArrayMas(){
+            let mas=[];
+            let sum=0;
+            for (let i=0;i<106;i++){
+                mas[i]= Math.floor(Math.random() * 106);
+            }
+            for (let i=0;i<106;i++){
+                if (mas[i] % 2 == 0) sum+=mas[i];
+            }
+            console.log(mas);
+            console.log(mas.reverse());
+            console.log(sum);
+        }
+        </script>
+<button onclick="showMonth()">ТЫК!!!</button>
+<button onclick="nameL()">2 задание </button>
+<button onclick="ArrayMas()">3 задание </button>
+<p class="z2"></p>
+<input type="text" class="z4">a
+<input type="text" class="z5">x
+<button onclick="values()">ТЫК!!!</button>
+<p class="z6"></p>
+<button onclick="show()">ТЫК!!!</button>
 </body>
 </html>
