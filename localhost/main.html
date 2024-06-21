@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinoJam</title>
+    <link rel="stylesheet" href="/css/css.css">
+    <script defer src="/trpo.js"></script>
+   <style>
+   form {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border:4px solid blue;
+    
+}
+.body1{
+    margin: 40px 20px;
+    height: 1000px;
+    background-color: white;
+}
+
+.nameForm {
+    height: 100px;
+    background-color:cornflowerblue;
+    padding: 45px 0 0 15px;
+    font-size: 45px;
+    font-family: arial;
+    color: aliceblue;
+    margin-bottom: 15px;
+    /* background-image: url("/1.png");
+    background-repeat:no-repeat;
+    background-position: 19% 50% ; */
+}
+
+.nameForm::first-letter {
+    color:beige;
+}
+
+.container1 {
+    display: grid;
+    grid-template-columns: 25% 33% 1fr;
+    grid-template-rows: repeat(12,1fr);
+    gap: 5% 5%;
+    grid-auto-flow: row;
+    height: 70%;
+    
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.b { grid-area: 1 / 1 / 2 / 2; }
+.b2 { grid-area: 1 / 2 / 2 / 3; }
+.b3 { grid-area: 1 / 3 / 2 / 4; }
+.b3 label a { display: flex; justify-content: end; }
+.b4 { grid-area: 2 / 1 / 3 / 2; }
+.b5 { grid-area: 2 / 2 / 3 / 3; }
+.b6 { grid-area: 3 / 1 / 4 / 2; }
+.b7 { grid-area: 3 / 1 / 4 / 2; }
+.b8 { grid-area: 3 / 2 / 4 / 3; }
+.b9 { grid-area: 4 / 1 / 5 / 2; }
+.b10 { grid-area: 4 / 2 / 5 / 3; }
+.b11 { grid-area: 5 / 1 / 6 / 2; }
+.b12 { grid-area: 5 / 2 / 6 / 3; }
+.b67 { grid-area: 2 / 3 / 9 / 4;  color:burlywood; padding-top: 200px; background-image: url("/галочка.png"); background-repeat: no-repeat;background-position-y: 200px; padding-left: 45px ;}
+.b13 { grid-area: 6 / 1 / 7 / 2; }
+.b14 { grid-area: 6 / 2 / 7 / 3; }
+.b15 { grid-area: 7 / 2 / 8 / 3; }
+.b16 { grid-area: 8 / 1 / 9 / 2; }
+.b17 { grid-area: 8 / 2 / 9 / 3; }
+.b18 { grid-area: 9 / 1 / 10 / 2; }
+.b19 { grid-area: 9 / 2 / 10 / 3; }
+.b20 { grid-area: 10 / 1 / 11 / 4; color:burlywood; width: 70%;}
+.b21 { grid-area: 11 / 1 / 12 / 2; }
+.b22 { grid-area: 11 / 2 / 12 / 3; }
+.b23 { grid-area: 12 / 1 / 13 / 2; }
+.b23 button {margin-left:15px; min-width:80%; }
+.b24 { grid-area: 12 / 3 / 13 / 4; background-image: url("/стрелка.png"); background-repeat: no-repeat; background-size: 15%; background-position-x: 80px;}
+.b24 button {margin-right: 15px; min-width: 80%;}
+.body2 {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+.container2 {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    
+}
+.left {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.left img {
+    width: 200px;
+    height: auto;
+}
+.thumbnails {
+    display: flex;
+    margin-top: 20px;
+}
+.thumbnails img {
+    width: 50px;
+    height: auto;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.right {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.right h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.right .price {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.right .rating {
+    color: #ff9900;
+    margin-bottom: 10px;
+}
+.right .color-options, .right .size-options, .right .quantity {
+    margin-bottom: 20px;
+}
+.right label {
+    display: block;
+    margin-bottom: 5px;
+}
+.right .color-options input, .right .size-options input {
+    margin-right: 10px;
+}
+.right .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.right .buttons button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.right .buttons .add-to-cart {
+    background-color: #6200ea;
+    color: white;
+}
+.right .buttons .inquiry {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.container1 input[type=text],input[type=password]{
+    width: 100%;
+}
+
+.left1 {
+    width: 50%;
+    float: left;
+}
+.right1 {
+    width:100%;
+}
+
+   </style>
+</head>
+<body>
+    <nav class="navigator">
+        <a href="/main.html" class="logo">
+            <img src="/Лого.svg" alt="logo">
+        </a>
+        <ul class="header-list">
+            <li class="header-list-item"><a href="#">Бронирование</a></li>
+            <li class="header-list-item"><a href="#Kino">Кино</a></li>
+            <li class="header-list-item"><a href="#news">Новости</a></li>
+            <li class="header-list-item"><a href="#onas">О нас</a></li>
+            <li class="header-list-item"><a href="/registration.php" id="registration">Регистрация</a></li>
+        </ul>
+        <div class="icons">
+            <a href="https://www.instagram.com/jamalbenderusss/" target="_blank" class="icon-in">
+            </a>
+            <a href="https://twitter.com/?lang=ru" target="_blank" class="icon-tw">
+            </a>
+            <a href="https://vk.com/feed" target="_blank" class="icon-vk" >
+            </a>
+            <a href="/profile.php" class="icon-profile">
+            </a>
+        </div>
+    </nav>
+    <div class="main-image">
+        <img src="Rectangle 180.png" alt="Avatar">
+    </div>
+    <div class="container">
+    <div class="container" id="Kino">
+        <h2 class="title" >Сегодня в кино</h2>
+        <div class="days" >
+            <div class="kinotheatres-1">    
+                <select name="kinotheatres" id="theatre-select" class="burger-menu">
+                    <option value="">Кинотеатр</option>
+                    <option value="1">Кинотеатр "Октябрь"</option>
+                    <option value="2">Кинотеатр "Восток"</option>
+                    <option value="3">Кинотеатр "Космос"</option>
+                    <option value="4">Кинотеатр "Красная звезда"</option>
+                    <option value="5">Молодежный центр</option>
+                </select>
+            </div>
+            <ul class="days-list">
+                <li class="days-list-item"  tabindex="1">
+                    <span class="t1">чт</span>
+                    <span class="t2">19</span>
+                    <span class="t3">октября</span>
+                </li>
+                <li class="days-list-item"   tabindex="2">
+                    <span class="t1">пт</span>
+                    <span class="t2">20</span>
+                    <span class="t3">октября</span>
+                </li>
+                <li class="days-list-item"   tabindex="3">
+                    <span class="t1">сб</span>
+                    <span class="t2">21</span>
+                    <span class="t3">октября</span>
+                </li>
+                <li class="days-list-item"  tabindex="4">
+                    <span class="t1">вс</span>
+                    <span class="t2">22</span>
+                    <span class="t3">октября</span>
+                </li>
+                <li class="days-list-item"  tabindex="5">
+                    <span class="t1">пн</span>
+                    <span class="t2">23</span>
+                    <span class="t3">октября</span>
+                </li>
+                <li class="days-list-item"  tabindex="6">
+                    <span class="t1">вт</span>
+                    <span class="t2">24</span>
+                    <span class="t3">октября</span>
+                </li>
+                <li class="days-list-item" tabindex="7">
+                    <span class="t1">ср</span>
+                    <span class="t2">25</span>
+                    <span class="t3">октября</span>
+                </li>
+            </ul>
+        </div> 
+        <div class="films-list">
+
+        </div>
+        </div>
+        <h2 class="title">Скоро в кино</h2>
+        <div class="new-films-list">
+            
+        </div>
+        <h2 class="title" id="news">Новости</h2>
+        <ul class="news-list">
+            <li class="column">
+                <ul class="table1">
+                    <li class="news-list-item">
+                        <p>В репертуаре возможны изменения!</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="column">
+                <ul class="table2">
+                    <li class="news-list-item">
+                        <p>В репертуаре возможны изменения!</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="column">
+                <ul class="table3">
+                    <li class="news-list-item">
+                        <p>В репертуаре возможны измененивфывфывфя!</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="column">
+                <ul class="table4">
+                    <li class="news-list-item">
+                        <p>В репертуаре возможdssssssssssssssssssssssssssssssssssssss</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h2 class="title" id="onas">О нас</h2>
+        <div class="group">    
+                <div class="images">
+                    <img src="/1.jpg" alt="1" class="photo-kino">
+                </div>
+                    <span class="text"><b >Регион:</b>Гродно</span>
+                    <span class="text"><b >Адрес:</b>ул. Поповича, 3</span>
+                    <span class="text"><b >Телефон кассы:</b>+375(152)-601-752</span>
+                    <span class="text"><b >Автоответчик:</b>+375(152)-601-920</span> 
+                    <span class="text"><b >Директор:</b>Попков Виктор Николаевич</span>
+                    <span class="text"><b >Количество залов:</b>3</span>
+                    <span class="text"><b >Дата открытия:</b>01/01/1987</span>
+                    <span class="text"><b >Бар:</b>Кино-бар "CinemaCity"</span>
+                    <span class="text"><b >Ассортимент бара:</b>кофе, попкорн, алкоголь и пр. (кроме горячих блюд)</span>
+                    <span class="text"><b >Дополнительная информация:</b></span>
+                    <span class="text">* - киносеанс с организацией предсеансового мероприятия стоимостью 0р. 10к.
+                    Внимание! По техническим причинам оплатить стоимость киносеанса посредством данного сайта без оплаты услуги "предсеансовое мероприятие" временно не представляется возможным. Оплатить билеты на киносеанс без указанной услуги можно только в кассе кинотеатра. Заранее приносим свои извинения за доставленные неудобства.</span>
+        </div>
+        <div style="display: flex;flex-direction: column;">
+
+
+        <div class="left1">
+
+            <div class="body1">
+                
+                <form action="" method="get">
+                    <div class="nameForm">Анкета <img src="/1.png" alt=""></div>
+                    <div class="container1">
+                <div class="b"><input type="radio"> <label> Я новый пользователь</label></div>
+                <div class="b2"><input type="radio"> <label> Я уже регистрировался</label></div>
+                <div class="b3"><label><a href="#">Настроить прокси...</a> </label>
+                </div>
+                    <label class="b4">Никнейм:</label><input type="text" class="b5">
+                    <label class="b67">Lorem ipsum dolor  reprehenderit, illum qui hic a dolorem quia quisquam dolorum nihil reiciendis placeat excepturi laboriosam delectus, nam cupiditate maxime.</label>
+                        <label class="b7">Имя:</label><input type="text" class="b8">
+                        
+                        <label class="b9">Фамилия:</label><input type="text" class="b10">
+                        <label class="b11">E-mail:</label><input type="text" class="b12">
+            <label class="b13">Пароль:</label><input type="password" class="b14">
+            <div class="b15">
+                <input type="checkbox"><label >Отобразить пароль</label>
+            </div>
+            <label class="b16">Повторите Пароль:</label><input type="password" class="b17">
+            <label class="b18">Имя установки:</label><input type="password" class="b19">
+            <label class="b20">Имя установки может использоваться вами для облегчения управления через ваш "Личный кабинет" всеми установленными версиями NetPolice на разных компьютерах</label>
+            <label class="b21">Профиль:</label> <select  class="b22" name="" id="">
+                <option value="1">Пользовательский</option>
+                <option value="2">Административный</option>
+                <option value="3">Гостевой</option>
+            </select>
+            <div class="b23">
+                <button  type="reset">Отмена</button>    
+            </div>
+            <div class="b24">
+                <button  type="submit">Зарегистрироваться</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+<div class="right1">
+
+    <div class="body2">
+        
+        <div class="container2">
+            <div class="left">
+                <img src="/1/1.png" alt="Product Image">
+                <div class="thumbnails">
+                    <img src="/1/1.png" alt="Thumbnail 1">
+                    <img src="/1/1.png" alt="Thumbnail 2">
+                    <img src="/1/1.png" alt="Thumbnail 3">
+                    <img src="/1/1.png" alt="Thumbnail 4">
+                </div>
+            </div>
+            <div class="right">
+                <h1>Original Version of Some product name</h1>
+                <div class="price">USD139.90</div>
+                <div class="rating">★★★★☆ 7/10</div>
+                <div class="color-options">
+                    <label>Color:</label>
+                    <input type="radio" name="color" value="black" checked> Black
+                    <input type="radio" name="color" value="blue"> Blue
+                    <input type="radio" name="color" value="green"> Green
+                    <input type="radio" name="color" value="red"> Red
+                </div>
+                <div class="size-options">
+                    <label>Size:</label>
+                    <input type="radio" name="size" value="SM"> SM
+                    <input type="radio" name="size" value="MD"> MD
+                    <input type="radio" name="size" value="XL" checked> XL
+                </div>
+                <div class="quantity">
+                    <label>Quantity:</label>
+                    <button>-</button>
+                    <input style="width: 50px; text-align: center;">
+                    <button>+</button>
+                </div>
+                <div class="extra">
+                    <p>Shipping cost is extra $25 based on country</p>
+                </div>
+                <div class="buttons">
+                    <button class="add-to-cart">ADD TO CART</button>
+                    <button class="inquiry">SEND INQUIRY</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+    <footer>
+        <img src="/Лого.svg" class="logo-1" alt="logo">
+        <p class="footer-1">ООО “KinoJam” 2023-н.в. Гродно, ул. Фолюш, 
+            50УНП: 156131516
+            выдан 21.09.2023 Гродненским горисполкомом</p>
+            <div class="data">
+                <p class="mts"> +375 (25) 679-69-14</p>
+                <p class="life"> +375 (25) 228-80-63</p>
+                <p class="mail"> artem.kostyuk.2015@inbox.ru</p>
+            </div>
+            <div class="time-of-work"><p class="p1">Время работы:</p>
+                <p class="p2">пн-пт:8:00-00:00</p>
+                <p class="p3">сб-вс:10:00-23:00</p>
+            </div>
+        </footer>
+    <div class="overlay" id="overlay-film-info">
+    </div>
+    
+</body>
+    <script>
+                  function openFilminfo(){
+              cardInfo();             
+                overlayFilm.style.display='block';
+              window.addEventListener('click',function(event){
+                if(event.target===overlayFilm){
+                  overlayFilm.style.display='none';
+                }
+              })
+          }
+        var overlayFilm=document.getElementById('overlay-film-info');
+         function cardInfo(){
+          let film=document.createElement('div');
+          film.classList.add('.modal-film-info');
+          film.innerHTML=`
+          <div class="info">
+              <h2 class="title"> Оппенгеймер</h2>
+              <div class="film">
+                  <div class="info-film">  
+                      <p>
+                          <strong>Дата выхода</strong>
+                          21 июля 2023 г.(мир) 
+                          <br>
+                      </p>
+                      <p>
+                          <strong>Жанр</strong>  
+                          история, драма, биография 
+                          <br>
+                      </p>
+                      <p>
+                          <strong>Режисер</strong> 
+                          Кристофер Нолан 
+                          <br>
+                      </p>
+                      <p>
+                          <strong>В главных ролях</strong> 
+                          Киллиан Мерфи Эмили Блант Мэтт Дэймон Роберт Дауни мл.
+                          <br>
+                      </p>
+                      <div class="story">
+                          <p>
+                              История жизни американского физика-теоретика Роберта Оппенгеймера, который во времена Второй мировой войны руководил Манхэттенским проектом — секретными разработками ядерного оружия.
+                          </p>
+                      </div>
+                      <div id="tickets">
+                          <table class="ticketList">
+                              <tr class="ticketList-item">
+                                  <td class="cinema">
+                                      <span class="cinemaName">Ёлки 10 12+ 2D
+                                      </span>
+                                      <span class="templateName">К-р Октябрь (Гродно)
+                                      </span>
+                                      <span class="templateName">Малый зал
+                                      </span>
+                                  </td>
+                                  <td class="times">
+                                      <a class="ticket" target="_blank" href="https://api.megamag.by/widget/seance.php?id=2561571">
+                                          <span>18:00
+                                          </span>
+                                          <br>
+                                          <span>8.00р.
+                                          </span>
+                                      </a>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          `;
+          overlayFilm.appendChild(film);
+         }
+        </script>
+</html>
