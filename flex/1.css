@@ -1,0 +1,114 @@
+.column1 {
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    gap: 20px;
+    border: 0;
+    width: 1000px;
+    
+    margin-bottom: 10px;
+}
+
+.column1 div {
+    width: 500px;
+    height: 125px;
+}
+
+
+div {
+    border-radius: 0.5px;
+    border-color: black;
+    border-style: solid;
+}
+
+.column2 {
+    justify-content: center;
+    display: flex;
+    flex-flow:  row nowrap;
+    gap: 50px;
+    border: 0;
+    width: 1000px;
+    margin-bottom: 10px;
+}
+
+.column2 div {
+    border-radius: 0.5px;
+    border-color: green;
+    border-style: solid;
+    width: 500px;
+    height: 300px;
+}
+
+.container { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 3% 2%;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "b b2 b2 b3"
+      "b5 b5 b4 b3"
+      "b6 b6 b4 b3";
+      height: 350px;
+      border: none;
+      margin-bottom: 10px;
+      width: 70%;
+  }
+  
+  .b { grid-area: b; }
+  
+  .b2 { grid-area: b2; }
+  
+  .b3 { grid-area: b3; }
+  
+  .b4 { grid-area: b4; }
+  
+  .b5 { grid-area: b5; }
+  
+  .b6 { grid-area: b6; }
+  
+
+
+
+.column4 div {
+    border-radius: 0.5px;
+    border-color: orange;
+    border-style: solid;
+    width: 700px;
+}
+
+.column4 {
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    width: 1000px;
+    gap: 100px;
+    border: 0;
+    margin-bottom: 10px;
+}
+
+.column5 {
+    display: flex;
+    width: 1000px;
+    justify-content: center;
+    flex-flow: row nowrap;
+    border: 0;
+    margin-bottom: 10px;
+}
+
+.b3 {
+    background-image: url("/flex/Оппенгеймер.png");
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width:1000px) {
+    *{
+        font-size: 20px;
+        color: red;
+    }
+    .container {
+        width: 100%;
+    }
+}
+
