@@ -1,0 +1,111 @@
+*{
+    font-size: 18px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+body{
+background-color:antiquewhite;
+}
+
+h2{
+    font-size: 25px;
+}
+
+
+
+.lineNon{
+    text-decoration: none;
+}
+
+table,th,td{
+    border-radius: 0.5px;
+    border-style: solid;
+}
+
+.title{
+    font-size: 30px;
+}
+
+ol li:hover{
+    text-shadow: 10px 1px 10px red;
+    cursor: pointer;
+}
+
+ol li:last-child:hover,li:first-child:hover{
+    text-shadow: 10px 1px 10px black;
+}
+
+img{
+    width: 300px;
+    border-radius: 100px;
+}
+
+.iron-man{
+    text-decoration: line-through;
+}
+
+.form{
+    width:500px;
+    margin: auto;
+    border-radius: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+label{
+    text-align: left;
+    width: 45%;
+    display: inline-block;
+    left: auto;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+input{
+    width:50%;
+    display: inline-block;
+    border-radius: 75px;
+}
+
+.input-radio{
+    width:20%;
+}
+
+
+.form-div{
+    text-align: left;
+}
+
+.full{
+    width: 100%;
+    text-align: center;
+}
+
+button{
+    width: 49%;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: blue;
+    color: white;
+    font-size: 18px;
+}
+
+.xobby{
+    text-align: center;
+}
+
+.option{
+    width: 45%;
+}
+
+select{
+    width: 50%;
+}
+
+.xobbies{
+    border-top-color: black;
+    border-top-style: solid;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-radius: 0.5px;
+}
