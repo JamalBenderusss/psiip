@@ -6,7 +6,106 @@
     <title>KinoJam</title>
     <link rel="stylesheet" href="/css/css.css">
     <script defer src="/trpo.js"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            const emailInput = form.querySelector('input[type="text"][class="b12"]');
+            const passwordInput = form.querySelector('input[type="password"][class="b14"]');
+            const confirmPasswordInput = form.querySelector('input[type="password"][class="b17"]');
+            const nicknameInput = form.querySelector('input[type="text"][class="b5"]');
+            const firstNameInput = form.querySelector('input[type="text"][class="b8"]');
+            const lastNameInput = form.querySelector('input[type="text"][class="b10"]');
+
+            // Функция для отображения ошибки
+            function showError(input, message) {
+                const errorElement = document.createElement('div');
+                errorElement.className = 'error-message';
+                errorElement.innerText = message;
+                input.parentElement.appendChild(errorElement);
+                input.classList.add('error');
+            }
+
+            // Функция для очистки ошибок
+            function clearErrors() {
+                const errorMessages = document.querySelectorAll('.error-message');
+                errorMessages.forEach(function(error) {
+                    error.remove();
+                });
+                const errorInputs = document.querySelectorAll('.error');
+                errorInputs.forEach(function(input) {
+                    input.classList.remove('error');
+                });
+            }
+
+            form.addEventListener('submit', function(event) {
+                clearErrors();
+                let valid = true;
+
+                // Проверка никнейма
+                if (nicknameInput.value.trim() === '') {
+                    valid = false;
+                    showError(nicknameInput, 'Никнейм обязателен.');
+                } else if (nicknameInput.value.length < 3 || nicknameInput.value.length > 20) {
+                    valid = false;
+                    showError(nicknameInput, 'Никнейм должен быть от 3 до 20 символов.');
+                }
+
+                // Проверка имени
+                if (firstNameInput.value.trim() === '') {
+                    valid = false;
+                    showError(firstNameInput, 'Имя обязательно.');
+                } else if (firstNameInput.value.length < 2 || firstNameInput.value.length > 30) {
+                    valid = false;
+                    showError(firstNameInput, 'Имя должно быть от 2 до 30 символов.');
+                }
+
+                // Проверка фамилии
+                if (lastNameInput.value.trim() === '') {
+                    valid = false;
+                    showError(lastNameInput, 'Фамилия обязательна.');
+                } else if (lastNameInput.value.length < 2 || lastNameInput.value.length > 30) {
+                    valid = false;
+                    showError(lastNameInput, 'Фамилия должна быть от 2 до 30 символов.');
+                }
+
+                // Проверка email
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(emailInput.value)) {
+                    valid = false;
+                    showError(emailInput, 'Введите корректный E-mail.');
+                }
+
+                // Проверка пароля
+                if (passwordInput.value.trim() === '') {
+                    valid = false;
+                    showError(passwordInput, 'Пароль обязателен.');
+                } else if (passwordInput.value.length < 6 || passwordInput.value.length > 20) {
+                    valid = false;
+                    showError(passwordInput, 'Пароль должен быть от 6 до 20 символов.');
+                }
+
+                // Проверка подтверждения пароля
+                if (passwordInput.value !== confirmPasswordInput.value) {
+                    valid = false;
+                    showError(confirmPasswordInput, 'Пароли не совпадают.');
+                }
+
+                if (!valid) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
    <style>
+.error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .error {
+            border-color: red;
+        }
+
    form {
     width: 100%;
     height: 100%;
