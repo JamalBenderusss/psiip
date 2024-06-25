@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=p, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="1.css">
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                alert(document.documentElement.clientWidth);
+            }, 5000);
+            setTimeout(function() {
+                var cpuClass = navigator.hardwareConcurrency; // Количество логических процессоров
+                alert("Logical CPU Cores: " + cpuClass);
+            }, 4000);
+            var nodeToClone = document.querySelector('img');
+        // Создаем копию узла
+        var clonedNode = nodeToClone.cloneNode(true);
+        // Находим узел, после которого нужно вставить копию
+        var referenceNode = document.querySelector('p');
+        // Вставляем копию после найденного узла
+        referenceNode.parentNode.insertBefore(clonedNode, referenceNode.nextSibling);
+        };
+    </script>
+</head>
+<body>
+    <p> Костюк Артем Игоревич</p>
+    <a href="https://www.youtube.com/watch?v=CGgI-Wvlcvc&t=42s" target="_blank">https://www.youtube.com/watch?v=CGgI-Wvlcvc&t=42s</a>
+    <img src="Оппенгеймер.png" alt="">
+</body>
+</html>

@@ -1,0 +1,9 @@
+a:hover {
+    color: green;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+p:hover{
+    font-size: 2rem;
+}
