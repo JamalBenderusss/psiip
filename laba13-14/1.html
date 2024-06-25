@@ -2,18 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=p, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="1.css">
     <script>
         window.onload = function() {
+            setInterval(function() {
+                var computerInfoWindow = window.open('', '_blank', 'width=400,height=300'); 
+                var cpuClass = navigator.hardwareConcurrency; // Количество логических процессоров
+                if (computerInfoWindow) {
+                    computerInfoWindow.document.write('<p>Logical CPU Cores:  '+ cpuClass +'</p>');
+                    computerInfoWindow.document.close();
+                }else {
+        alert('Не удалось открыть новое окно. Возможно, в браузере заблокированы всплывающие окна.');
+    }
+            }, 4000);
             setTimeout(function() {
                 alert(document.documentElement.clientWidth);
             }, 5000);
-            setTimeout(function() {
-                var cpuClass = navigator.hardwareConcurrency; // Количество логических процессоров
-                alert("Logical CPU Cores: " + cpuClass);
-            }, 4000);
             var nodeToClone = document.querySelector('img');
         // Создаем копию узла
         var clonedNode = nodeToClone.cloneNode(true);
