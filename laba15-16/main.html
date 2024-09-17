@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body * {
+            margin: 10px;
+            border:1px solid blue;
+        }
+    </style>
+</head>
+
+<body onclick="alert('Сюда всплытие не дойдет')">
+    <button onclick="event.stopPropagation()">Кликни меня!</button>
+    <input value="Нажми меня" onclick="alert('Клик!')" type="button">
+    <input value="Считать кроликов!" onclick="countRabbits()" type="button">
+    <input value="Нажми меня" id="elem" type="button">
+    <button onclick="alert(this.innerHTML)">Нажми меня</button>
+    <form onclick="alert('form')">FORM
+        <div onclick="alert('div')">DIV
+            <p onclick="alert('p')">P</p>
+        </div>
+    </form>
+</body>
+<script>
+    function handler1(){
+        alert("Спасибо");
+    }
+
+    function handler2(){
+        alert("Спасибо еще раз");
+    }
+
+    elem.onclick = () => alert("Привет");
+    elem.addEventListener("click",handler1);
+    elem.addEventListener("click",handler2);
+    elem.removeEventListener("click",handler2);
+
+    function countRabbits(){
+        for (let i=1;i<=3;i++){
+            alert("Кролик номер " + i)
+        }
+    }
+
+    elem.onclick = function(){
+        alert("Спасибо");
+    }
+</script>
+</html>
