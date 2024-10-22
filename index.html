@@ -1,24 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="1.css">
+    <script defer src="1.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+<script>
+    $(document).ready(function() {
+        $("#phone").mask("+375 (99) 999-99-99");
+    });
+
+</script>
+
 <body>
-    <a href="laba1-4/index.html">laba1-4</a>
-    <a href="flex/1.html">laba5-8 grid</a>
-    <a href="grid/1.html">laba5-8 flex</a>
-    <a href="localhost/main.html">laba5-8 flex</a>
-    <a href="9%20laba/index.html">laba9</a>
-    <a href="%D0%9B%D0%A0%2010-12/index.html">laba10-12</a>
-    <a href="laba13-14/1.html">laba13-14</a>
-    <a href="laba15-16/laba15/1.html">laba15</a>
-    <a href="laba15-16/1.html">laba16</a>
-    <a href="laba15-16/main.html">laba17</a>
-    <a href="17/index.html">laba17</a>
-    <a href="laba15-16/laba15/1.html">laba18</a>
-    <a href="19/index.html">laba19</a>
-    <a href="20/1.html">laba20</a>
+<form method="get">
+    <label>Имя</label> <input type="text" class="name" required minlength="5">
+    <label>Пароль</label> <input type="password" class="password" required minlength="8">
+    <label>Группа</label> 
+    <select class="select">
+        <option>ПЗТ-37</option>
+        <option>ПЗТ-38</option>
+        <option>ПЗТ-39</option>
+    </select><br>
+    <label>Телефон</label>
+    <input type="tel" id="phone" name="phone"  required>
+    <label>email</label>
+    <input type="email" required>
+    
+    <div class="sex">
+        <label>Пол</label>
+        <input type="radio" value="0" name="s"> <p>Мужской</p>
+        <input type="radio" value="1" name="s"> <p>Женский</p>
+    </div>
+    <button class="button">Готово!</button>
+</form>
 </body>
 </html>
